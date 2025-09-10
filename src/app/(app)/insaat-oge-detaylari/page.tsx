@@ -40,7 +40,13 @@ const PROJECT: Project = {
         { id:'w14', name:'Cem P.',    score:4.2, photoUrl: AV(6) },
         { id:'w15', name:'Nisa T.',   score:4.4, photoUrl: AV(7) },
       ],
-      subTasks: [ /* … */ ],
+      subTasks: [
+        { id: 't1', title: 'Kalıp hazırlığı tamamlandı', done: true },
+        { id: 't2', title: 'Beton siparişi ve sevkiyat onayı', done: true },
+        { id: 't3', title: 'Döküm uygulaması', done: true },
+        { id: 't4', title: 'Kürleme ve yüzey düzeltme', done: false },
+        { id: 't5', title: 'Numune küpleri alındı', done: true }
+      ],
     },
     {
       id: 'e6', name: 'Duvar örme', progress: 60, updatedAt: '18.08.2025',
@@ -50,7 +56,13 @@ const PROJECT: Project = {
         { id:'w17', name:'Miraç E.', score:4.6, photoUrl: AV(10) },
         { id:'w18', name:'Deniz U.', score:4.5, photoUrl: AV(11) },
       ],
-      subTasks: [ /* … */ ],
+      subTasks: [
+        { id: 't6', title: 'Tuğla malzeme teslimi', done: true },
+        { id: 't7', title: 'Harç hazırlık alanı kuruldu', done: true },
+        { id: 't8', title: 'İlk sıra duvar terazisi', done: true },
+        { id: 't9', title: 'Kapı-Pencere lentoları', done: false },
+        { id: 't10', title: 'Elektrik kutu boşlukları', done: false },
+      ],
     },
     {
       id: 'e7', name: 'Elektrik tesisatı', progress: 75, updatedAt: '19.08.2025',
@@ -60,7 +72,12 @@ const PROJECT: Project = {
         { id:'w20', name:'Eren B.',  score:4.7, photoUrl: AV(14) },
         { id:'w21', name:'Selin K.', score:4.6, photoUrl: AV(15) },
       ],
-      subTasks: [ /* … */ ],
+      subTasks: [
+        { id: 't11', title: 'Kablo kanalları açıldı', done: true },
+        { id: 't12', title: 'Kablo çekimi', done: true },
+        { id: 't13', title: 'Pano montajı', done: false },
+        { id: 't14', title: 'Topraklama testi', done: false }
+      ],
     },
     {
       id: 'e8', name: 'Mekanik / HVAC', progress: 60, updatedAt: '17.08.2025',
@@ -70,7 +87,12 @@ const PROJECT: Project = {
         { id:'w23', name:'Halil İ.',  score:4.6, photoUrl: AV(18) },
         { id:'w24', name:'Seda L.',   score:4.5, photoUrl: AV(19) },
       ],
-      subTasks: [ /* … */ ],
+      subTasks: [
+        { id: 't15', title: 'Şaft montajı', done: true },
+        { id: 't16', title: 'Ana hat borulama', done: true },
+        { id: 't17', title: 'Fan-coil yerleşim', done: false },
+        { id: 't18', title: 'Basınç testi', done: false }
+      ],
     },
   ],
 };
