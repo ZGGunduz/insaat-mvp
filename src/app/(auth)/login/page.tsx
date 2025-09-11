@@ -2,9 +2,8 @@
 
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { loginFake } from "@/lib/auth"; // az önce eklediğimiz fake auth
+import { loginFake } from "@/lib/auth";
 
-// küçük yardımcılar
 function clsx(...xs: Array<string | false | null | undefined>) {
   return xs.filter(Boolean).join(" ");
 }
@@ -44,16 +43,15 @@ export default function LoginPage() {
     ev.preventDefault();
     if (!validate()) return;
 
-    // ✅ fake login + yönlendirme
     loginFake(username);
     setOk(true);
     router.replace("/dashboard");
   }
 
   return (
-    <div className="min-h-screen w-full bg-neutral-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-[980px] grid grid-cols-1 md:grid-cols-2 rounded-2xl bg-white shadow-xl ring-1 ring-black/5 overflow-hidden">
-        {/* Sol panel / Marka */}
+    <div className="min-h-screen w-full bg-neutral-50 flex items-center justify-center p-4 sm:p-6 overflow-auto">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 rounded-2xl bg-white shadow-xl ring-1 ring-black/5 overflow-hidden">
+
         <section className="hidden md:flex flex-col justify-between p-8 bg-[#ff5c00] text-white">
           <div>
             <div className="inline-flex items-center gap-2 bg-white/15 px-3 py-1 rounded-full text-sm font-medium">
@@ -73,9 +71,11 @@ export default function LoginPage() {
           <div className="text-xs text-white/80">© {new Date().getFullYear()} — Tüm hakları saklıdır</div>
         </section>
 
-        {/* Sağ panel / Form */}
-        <section className="p-6 sm:p-8">
-          {/* Başarı bildirimi (anlık gösterip /dashboard'a geçiyoruz) */}
+ 
+        <section className="md:hidden p-4 text-center text-sm text-neutral-600">
+          <strong>İnşaat Saha Yönetimi</strong> — Giriş yaparak iş süreçlerinizi yönetin.
+        </section>
+        <section className="p-4 sm:p-6 md:p-8">
           {ok && (
             <div className="mb-4 rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-sm text-green-800">
               Giriş başarılı (simülasyon). /dashboard'a yönlendiriliyorsunuz…
@@ -123,7 +123,7 @@ export default function LoginPage() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className={clsx(
-                    "mt-1 w-full rounded-lg border px-3 py-2",
+                    "mt-1 w-full rounded-lg border px-3 py-2.5 text-sm",
                     errors.username ? "border-red-500" : "border-neutral-300"
                   )}
                   placeholder="ornek@firma.com"
@@ -141,7 +141,7 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className={clsx(
-                    "mt-1 w-full rounded-lg border px-3 py-2",
+                    "mt-1 w-full rounded-lg border px-3 py-2.5 text-sm",
                     errors.password ? "border-red-500" : "border-neutral-300"
                   )}
                   placeholder="••••••••"
@@ -151,7 +151,10 @@ export default function LoginPage() {
                 )}
               </div>
 
-              <button type="submit" className="w-full rounded-lg bg-[#ff5c00] hover:bg-[#e65100] text-white px-4 py-2.5 text-sm font-medium">
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-[#ff5c00] hover:bg-[#e65100] text-white px-4 py-3 text-sm font-semibold"
+              >
                 Giriş Yap
               </button>
             </form>
