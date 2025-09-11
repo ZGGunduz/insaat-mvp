@@ -15,7 +15,7 @@ export default function AppSectionLayout({
 }) {
   return (
     <AuthGate>
-      <div className="min-h-screen grid grid-cols-[240px_1fr]">
+      <div className="min-h-screen block md:grid grid-cols-[240px_1fr]">
         <Sidebar />
         <main className="p-6">{children}</main>
       </div>
