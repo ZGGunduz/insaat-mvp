@@ -136,7 +136,7 @@ export default function DashboardPage() {
       <div className="min-h-screen bg-neutral-50">
         {/* Header of Detail */}
         <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-neutral-200">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-auto flex flex-wrap items-center gap-4 py-4">
             <button onClick={() => setActive(null)} className="h-8 px-3 rounded-lg border border-neutral-300 bg-white text-sm">
               ← Geri
             </button>
@@ -279,7 +279,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Cards */}
-        <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+       <ul className="mt-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {filtered.map((p) => (
             <li
               key={p.id}
@@ -329,7 +329,7 @@ export default function DashboardPage() {
         <div className="fixed inset-0 z-40">
           <div className="absolute inset-0 bg-black/30" onClick={() => setNewOpen(false)} />
           <div className="absolute inset-0 grid place-items-center p-4">
-            <form onSubmit={submitNew} className="w-full max-w-md rounded-2xl bg-white p-5 shadow-xl ring-1 ring-neutral-200">
+          <form onSubmit={submitNew} className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg rounded-2xl bg-white p-5 shadow-xl ring-1 ring-neutral-200">
               <h2 className="text-base font-semibold">Yeni Proje</h2>
               <div className="mt-3">
                 <label className="text-xs text-neutral-700">Proje Kodu</label>
